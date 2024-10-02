@@ -8,7 +8,9 @@ export function Header() {
         <Link to="/">Logo</Link>
       </div>
       <div className={styles.searchButton}>Search button</div>
-      <div className={styles.cartButton}>Cart button</div>
+      <div className={styles.cartButton}>
+        <Link to='cart'>Cart button</Link>
+        </div>
     </div>
   );
 }
