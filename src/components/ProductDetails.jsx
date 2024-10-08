@@ -12,10 +12,10 @@ export function ProductDetails() {
   return (
     <>
       {console.log(product)}
-      <p>{product.title}</p>
+      <p>{product.name}</p>
       <p>{product.price}</p>
       <p>{product.description}</p>
-      <img src={product.image} alt="" />
+      <img src={`/img/men/${product.image}`} alt={product.name} />
       <button onClick={addToCart}>Add to cart</button>
     </>
   );

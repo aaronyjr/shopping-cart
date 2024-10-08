@@ -18,8 +18,12 @@ const router = createBrowserRouter([
         element: <Homepage />,
       },
       {
-        path: "product",
-        element: <ProductPage />,
+        path: "women",
+        element: <ProductPage gender="women" />,
+      },
+      {
+        path: "men",
+        element: <ProductPage gender="men"/>,
       },
       {
         path: "product/:productId",

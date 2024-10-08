@@ -1,32 +1,39 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { products as productData } from "./data/Products";
+import PropTypes from "prop-types";
 
-export function ProductPage() {
-  const [products, setProducts] = useState(null);
-  const navigate = useNavigate()
+ProductPage.propTypes = {
+  gender: PropTypes.string.isRequired,
+};
 
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      })
-      .catch((error) => console.log("Error fetching data", error));
-  }, []);
+export function ProductPage({ gender }) {
+  const [products, setProducts] = useState(productData);
+  const navigate = useNavigate();
+  console.log('wtf"?')
+  console.log(products);
+  // useEffect(() => {
+  //   fetch("https://fakestoreapi.com/products")
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setProducts(data);
+  //     })
+  //     .catch((error) => console.log("Error fetching data", error));
+  // }, []);
 
   const handleProductClick = (product) => {
-    navigate(`/product/${product.id}`, {state: {product}})
-  }
+    navigate(`/product/${product.id}`, { state: { product } });
+  };
 
   return (
     <div>
       {products ? (
         products.map((product) => (
           <div key={product.id} onClick={() => handleProductClick(product)}>
-            <p>{product.title}</p>
+            <p>{product.name}</p>
             <p>{product.price}</p>
             <p>{product.description}</p>
-            <img src={product.image} alt="" />
+            <img src={`/img/${gender}/${product.image}`} alt={product.name} />
           </div>
         ))
       ) : (
@@ -36,3 +43,4 @@ export function ProductPage() {
     </div>
   );
 }
+
