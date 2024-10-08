@@ -10,7 +10,7 @@ ProductPage.propTypes = {
 export function ProductPage({ gender }) {
   const [products, setProducts] = useState(productData);
   const navigate = useNavigate();
-  console.log('wtf"?')
+  console.log('wtf"?');
   console.log(products);
   // useEffect(() => {
   //   fetch("https://fakestoreapi.com/products")
@@ -22,20 +22,24 @@ export function ProductPage({ gender }) {
   // }, []);
 
   const handleProductClick = (product) => {
-    navigate(`/product/${product.id}`, { state: { product } });
+    navigate(`/product/${product.id}`, { state: { product, gender } });
   };
 
   return (
     <div>
       {products ? (
-        products.map((product) => (
-          <div key={product.id} onClick={() => handleProductClick(product)}>
-            <p>{product.name}</p>
-            <p>{product.price}</p>
-            <p>{product.description}</p>
-            <img src={`/img/${gender}/${product.image}`} alt={product.name} />
-          </div>
-        ))
+        products
+          .filter((product) =>
+            product.category.toLowerCase().includes(gender.toLowerCase())
+          )
+          .map((product) => (
+            <div key={product.id} onClick={() => handleProductClick(product)}>
+              <p>{product.name}</p>
+              <p>{product.price}</p>
+              <p>{product.description}</p>
+              <img src={`/img/${gender}/${product.image}`} alt={product.name} />
+            </div>
+          ))
       ) : (
         <p>Loading...</p>
       )}
@@ -43,4 +47,3 @@ export function ProductPage({ gender }) {
     </div>
   );
 }
-

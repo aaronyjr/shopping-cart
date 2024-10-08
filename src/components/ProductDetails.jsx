@@ -3,6 +3,7 @@ import { useLocation, useOutletContext } from "react-router-dom";
 export function ProductDetails() {
   const { state } = useLocation();
   const product = state?.product;
+  const gender = state?.gender;
   const { cartItemCount, setCartItemCount } = useOutletContext();
 
   const addToCart = () => {
@@ -15,7 +16,7 @@ export function ProductDetails() {
       <p>{product.name}</p>
       <p>{product.price}</p>
       <p>{product.description}</p>
-      <img src={`/img/men/${product.image}`} alt={product.name} />
+      <img src={`/img/${gender}/${product.image}`} alt={product.name} />
       <button onClick={addToCart}>Add to cart</button>
     </>
   );
