@@ -29,13 +29,13 @@ export function ProductPage({ gender }) {
     <div>
       {products ? (
         products
-          .filter((product) =>
-            product.category.toLowerCase().includes(gender.toLowerCase())
+          .filter(
+            (product) => product.category.toLowerCase() === `${gender}'s suits`
           )
           .map((product) => (
             <div key={product.id} onClick={() => handleProductClick(product)}>
               <p>{product.name}</p>
-              <p>{product.price}</p>
+              <p>{"$" + product.price}</p>
               <p>{product.description}</p>
               <img src={`/img/${gender}/${product.image}`} alt={product.name} />
             </div>
@@ -43,7 +43,6 @@ export function ProductPage({ gender }) {
       ) : (
         <p>Loading...</p>
       )}
-      <p>product page</p>
     </div>
   );
 }
