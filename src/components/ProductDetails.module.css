@@ -1,0 +1,20 @@
+.productDetails {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    align-items: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    text-align: left;
+    max-width: 35vw;
+}
+
+button {
+    margin-top: 40px;
+}
