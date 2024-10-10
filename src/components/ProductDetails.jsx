@@ -1,17 +1,18 @@
-import { useLocation, useOutletContext } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../CartContext";
 
 export function ProductDetails() {
   const [size, setSize] = useState("S");
   const { state } = useLocation();
   const product = state?.product;
   const gender = state?.gender;
-  const { cartItemCount, setCartItemCount } = useOutletContext();
+  const { addItemToCart } = useContext(CartContext)
   const productSizes = ["S", "M", "L", "XL"];
 
-  const addToCart = () => {
-    setCartItemCount(cartItemCount + 1);
+  const handleAddToCart = () => {
+    addItemToCart(product, size);
   };
 
   const selectSize = (size) => {
@@ -41,7 +42,7 @@ export function ProductDetails() {
             ))}
           </div>
         </div>
-        <button onClick={addToCart}>Add to cart</button>
+        <button onClick={handleAddToCart}>Add to cart</button>
       </div>
     </div>
   );
