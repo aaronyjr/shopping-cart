@@ -36,7 +36,7 @@ export function ProductPage({ gender }) {
                 />
               </div>
               <div className={styles.right}>
-                <p className={styles.productName}>{product.name}</p>
+                <p className={styles.productName}>{product.name.toUpperCase()}</p>
                 <p>{"$" + product.price}</p>
               </div>
             </div>

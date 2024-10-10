@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../CartContext";
 
 export function ProductDetails() {
@@ -10,6 +10,16 @@ export function ProductDetails() {
   const gender = state?.gender;
   const { addItemToCart } = useContext(CartContext)
   const productSizes = ["S", "M", "L", "XL"];
+
+  useEffect(() => {
+    if (product?.name) {
+      document.title = product.name.toUpperCase();
+    }
+
+    return () => {
+      document.title = "SUITZXC";
+    };
+  }, [product?.name]);
 
   const handleAddToCart = () => {
     addItemToCart(product, size);
@@ -25,11 +35,12 @@ export function ProductDetails() {
         <img src={`/img/${gender}/${product.image}`} alt={product.name} />
       </div>
       <div className={styles.right}>
-        <p>{product.name}</p>
+        <p>{product.name.toUpperCase()}</p>
         <p>{"$" + product.price}</p>
         <br />
         <p>{product.description}</p>
         <div className={styles.sizeSelector}>
+          <br />
           <p>Select Size:</p>
           <div className={styles.sizeOptions}>
             {productSizes.map((productSize) => (
