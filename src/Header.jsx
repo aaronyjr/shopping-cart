@@ -11,7 +11,7 @@ const { cartItems } = useContext(CartContext)
       <div className={styles.logo}>
         <Link to="/">Logo</Link>
       </div>
-      <div className={styles.searchButton}>Search button</div>
+      {/* <div className={styles.searchButton}>Search button</div> */}
       <div className={styles.cartButton}>
         <Link to="cart">Cart button</Link>
       </div>
