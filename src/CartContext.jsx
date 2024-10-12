@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
 
   const removeItemFromCart = (productId, size) => {
     const newCartItems = cartItems.filter(
-      (item) => item.product.id !== productId && item.size !== size
+      (item) => !(item.product.id === productId && item.size === size)
     );
     setCartItems(newCartItems);
   };

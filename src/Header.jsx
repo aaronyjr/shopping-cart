@@ -1,12 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
-Header.propTypes = {
-  cartItemCount: PropTypes.number.isRequired,
-};
+export function Header() {
+const { cartItems } = useContext(CartContext)
 
-export function Header({ cartItemCount }) {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
@@ -16,7 +15,7 @@ export function Header({ cartItemCount }) {
       <div className={styles.cartButton}>
         <Link to="cart">Cart button</Link>
       </div>
-      <p>{cartItemCount}</p>
+      <p>{cartItems.length}</p>
     </div>
   );
 }
