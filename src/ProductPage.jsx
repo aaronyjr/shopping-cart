@@ -31,7 +31,7 @@ export function ProductPage({ gender }) {
             >
               <div className={styles.left}>
                 <img
-                  src={`/img/${gender}/${product.image}`}
+                  src={`/img/suits/${product.image}`}
                   alt={product.name}
                 />
               </div>

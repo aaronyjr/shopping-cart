@@ -32,7 +32,7 @@ export function ProductDetails() {
   return (
     <div className={styles.productDetails}>
       <div className={styles.left}>
-        <img src={`/img/${gender}/${product.image}`} alt={product.name} />
+        <img src={`/img/suits/${product.image}`} alt={product.name} />
       </div>
       <div className={styles.right}>
         <p>{product.name.toUpperCase()}</p>
