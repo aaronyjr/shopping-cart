@@ -16,6 +16,10 @@ export function Cart() {
       .toFixed(2);
   };
 
+  const handleCheckout = () => {
+    alert("Thank you for trying my app :)!")
+  }
+
   return (
     <div className="cart-container">
       <h2>Your Shopping Cart</h2>
@@ -62,6 +66,9 @@ export function Cart() {
           ))}
           <div className="cart-total">
             <h3>Cart Total: ${calculateCartTotal()}</h3>
+          </div>
+          <div>
+            <button onClick={() => handleCheckout()}>Checkout</button>
           </div>
         </div>
       ) : (
