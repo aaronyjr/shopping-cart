@@ -65,3 +65,7 @@
 .item-total {
   justify-self: end;
 }
+
+.checkoutButton {
+  margin-top: 0px;
+}

@@ -17,8 +17,8 @@ export function Cart() {
   };
 
   const handleCheckout = () => {
-    alert("Thank you for trying my app :)!")
-  }
+    alert("Thank you for trying my app :)!");
+  };
 
   return (
     <div className="cart-container">
@@ -68,7 +68,9 @@ export function Cart() {
             <h3>Cart Total: ${calculateCartTotal()}</h3>
           </div>
           <div>
-            <button onClick={() => handleCheckout()}>Checkout</button>
+            <button className="checkoutButton" onClick={() => handleCheckout()}>
+              Checkout
+            </button>
           </div>
         </div>
       ) : (
