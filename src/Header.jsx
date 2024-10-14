@@ -10,7 +10,7 @@ export function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.logo}>
-        <Link to="/">Logo</Link>
+        <Link to="/"><img src="../public/s-logo.svg" alt="Logo" /></Link>
       </div>
       <div
         className={styles.cartButton}

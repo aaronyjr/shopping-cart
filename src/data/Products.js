@@ -81,11 +81,11 @@ export const products = [
   },
   {
     "id": 11,
-    "name": "Textured Wool Blend Suit",
+    "name": "100% Linen Suit",
     "category": "Men's Suits",
     "price": 280,
     "description": "This wool blend suit features a textured finish that adds a modern twist to the traditional suit. The combination of wool and other fibers ensures a comfortable fit that’s warm yet breathable. Perfect for cooler weather or upscale events, this suit is both practical and stylish.",
-    "image": "texturedWoolBlendSuit.webp"
+    "image": "100percentLinenSuit.webp"
   },
   {
     "id": 12,
