@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import "./Cart.css";
 
 export function Cart() {
   const { cartItems, removeItemFromCart, increaseQuantity, decreaseQuantity } =
@@ -16,50 +17,53 @@ export function Cart() {
   };
 
   return (
-    <div>
+    <div className="cart-container">
       <h2>Your Shopping Cart</h2>
       {cartItems.length > 0 ? (
-        <>
-          <table>
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Image</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cartItems.map((item, index) => (
-                <tr key={index}>
-                  <td>                    <img
-                      src={`/img/suits/${item.product.image}`}
-                      alt={item.product.name}
-                      className="cart-image"
-                    />
-                    {item.product.name} - Size: {item.size}</td>
-
-                  <td>${item.product.price.toFixed(2)}</td>
-                  <td>
-                    <button onClick={() => decreaseQuantity(item.product.id, item.size)}>-</button>
-                    <span>{item.quantity}</span>
-                    <button onClick={() => increaseQuantity(item.product.id, item.size)}>+</button>
-                  </td>
-                  <td>${calculateItemTotal(item)}</td>
-                  <td>
-                    <button onClick={() => removeItemFromCart(item.product.id, item.size)}>Remove</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-
-          <div>
+        <div className="cart-grid">
+          {cartItems.map((item, index) => (
+            <div key={index} className="cart-item">
+              <img
+                src={`/img/suits/${item.product.image}`}
+                alt={item.product.name}
+                className="cart-image"
+              />
+              <div className="cart-details">
+                <p>
+                  {item.product.name} - Size: {item.size}
+                </p>
+                <p>Price: ${item.product.price.toFixed(2)}</p>
+              </div>
+              <div className="cart-actions">
+                <div className="quantity-wrapper">
+                  <button
+                    onClick={() => decreaseQuantity(item.product.id, item.size)}
+                  >
+                    -
+                  </button>
+                  <span className="quantity">{item.quantity}</span>
+                  <button
+                    onClick={() => increaseQuantity(item.product.id, item.size)}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+              <div className="item-total">
+                <p>Total: ${calculateItemTotal(item)}</p>
+              </div>
+              <button
+                onClick={() => removeItemFromCart(item.product.id, item.size)}
+                className="remove-btn"
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+          <div className="cart-total">
             <h3>Cart Total: ${calculateCartTotal()}</h3>
           </div>
-        </>
+        </div>
       ) : (
         <p>Your cart is empty</p>
       )}
