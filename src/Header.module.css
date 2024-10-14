@@ -5,8 +5,8 @@
   padding: 20px 30px;
 }
 
-.logo {
-  font-size: 24px;
+.logo img {
+  height: 100px;
 }
 
 .cartButton {
