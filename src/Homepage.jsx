@@ -14,17 +14,17 @@ export function Homepage() {
         <h2 className={styles.sectionTitle}>Customer Showcase</h2>
         <div className={styles.showcaseGrid}>
           <img
-            src="/public/img/homepage/beckham-suit.webp"
+            src="./img/homepage/beckham-suit.webp"
             alt="Customer 1"
             className={styles.showcaseImage}
           />
           <img
-            src="/public/img/homepage/women-suit.webp"
+            src="./img/homepage/women-suit.webp"
             alt="Customer 2"
             className={styles.showcaseImage}
           />
           <img
-            src="/public/img/homepage/v-suit.webp"
+            src="./img/homepage/v-suit.webp"
             alt="Customer 3"
             className={styles.showcaseImage}
           />

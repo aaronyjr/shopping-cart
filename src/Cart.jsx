@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import "./Cart.css";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Cart() {
   const { cartItems, removeItemFromCart, increaseQuantity, decreaseQuantity } =
@@ -17,7 +19,7 @@ export function Cart() {
   };
 
   const handleCheckout = () => {
-    alert("Thank you for trying my app :)!");
+    toast.success("Thank you for trying my app :)!");
   };
 
   return (
@@ -71,6 +73,7 @@ export function Cart() {
             <button className="checkoutButton" onClick={() => handleCheckout()}>
               Checkout
             </button>
+            <ToastContainer />
           </div>
         </div>
       ) : (
