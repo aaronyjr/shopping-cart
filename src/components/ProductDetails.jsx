@@ -7,7 +7,6 @@ export function ProductDetails() {
   const [size, setSize] = useState("S");
   const { state } = useLocation();
   const product = state?.product;
-  const gender = state?.gender;
   const { addItemToCart } = useContext(CartContext)
   const productSizes = ["S", "M", "L", "XL"];
 
@@ -17,7 +16,7 @@ export function ProductDetails() {
     }
 
     return () => {
-      document.title = "SUITZXC";
+      document.title = "Suit Savvy";
     };
   }, [product?.name]);
 
