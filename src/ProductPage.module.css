@@ -18,9 +18,16 @@ img {
 .productCard {
     display: flex;
     flex-direction: column;
-    border: 1px solid transparent;
+    border: 2px solid transparent;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: border 0.3s ease;
 }
+
+.productCard:hover {
+    border-color: #d48a44;
+    transform: scale(1.02);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
 
 .right {
     display: flex;
