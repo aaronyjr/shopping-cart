@@ -17,6 +17,15 @@
 - Vite
 - React Router
 
+## Display
+
+### Homepage
+![s1](https://github.com/user-attachments/assets/72e91287-669d-499e-be27-f65041be2013)
+### Product page
+![S2](https://github.com/user-attachments/assets/9fcd2ea8-cd53-4213-bff3-d44374a15907)
+### Cart
+![s3](https://github.com/user-attachments/assets/afd98dbe-98ae-4263-9cb6-afeb6a246eac)
+
 ## Getting Started
 
 To set up and run this project locally, follow these steps:
