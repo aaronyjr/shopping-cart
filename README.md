@@ -40,3 +40,7 @@ To set up and run this project locally, follow these steps:
 3. **Run the live demo**:
    ```bash
    npm run dev
+
+## Credits
+
+All photos of the products are taken from ZARA's official website store.
