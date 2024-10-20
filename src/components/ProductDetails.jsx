@@ -1,15 +1,17 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
 import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../CartContext";
+import { products as productData } from "../data/Products";
 
 export function ProductDetails() {
   const [size, setSize] = useState("S");
   const { state } = useLocation();
-  const product = state?.product;
   const { addItemToCart } = useContext(CartContext)
   const productSizes = ["S", "M", "L", "XL"];
-
+  const { productId } = useParams();
+  const product = state?.product || productData.find((p) => p.id === parseInt(productId));
+  
   useEffect(() => {
     if (product?.name) {
       document.title = product.name.toUpperCase();

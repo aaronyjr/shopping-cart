@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { products as productData } from "./data/Products";
 import PropTypes from "prop-types";
 import styles from "./ProductPage.module.css";
+import { useState } from "react";
 
 ProductPage.propTypes = {
   gender: PropTypes.string.isRequired,
@@ -10,11 +10,6 @@ ProductPage.propTypes = {
 
 export function ProductPage({ gender }) {
   const [products, setProducts] = useState(productData);
-  const navigate = useNavigate();
-
-  const handleProductClick = (product) => {
-    navigate(`/product/${product.id}`, { state: { product, gender } });
-  };
 
   return (
     <div className={styles.products}>
@@ -24,22 +19,22 @@ export function ProductPage({ gender }) {
             (product) => product.category.toLowerCase() === `${gender}'s suits`
           )
           .map((product) => (
-            <div
+            <Link
+              to={`/product/${product.id}`}
+              state={{ product, gender }}
               className={styles.productCard}
               key={product.id}
-              onClick={() => handleProductClick(product)}
             >
               <div className={styles.left}>
-                <img
-                  src={`/img/suits/${product.image}`}
-                  alt={product.name}
-                />
+                <img src={`/img/suits/${product.image}`} alt={product.name} />
               </div>
               <div className={styles.right}>
-                <p className={styles.productName}>{product.name.toUpperCase()}</p>
+                <p className={styles.productName}>
+                  {product.name.toUpperCase()}
+                </p>
                 <p>{"$" + product.price}</p>
               </div>
-            </div>
+            </Link>
           ))
       ) : (
         <p>Loading...</p>
