@@ -1,7 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
 import styles from "./ProductDetails.module.css";
 import { useContext, useState, useEffect } from "react";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../context/CartContext";
 import { products as productData } from "../data/Products";
 
 export function ProductDetails() {

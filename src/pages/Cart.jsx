@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 import "./Cart.css";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { products as productData } from "./data/Products";
+import { products as productData } from "../data/Products";
 import PropTypes from "prop-types";
 import styles from "./ProductPage.module.css";
 import { useState } from "react";

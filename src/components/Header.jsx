@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
+import { CartContext } from "../context/CartContext";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 export function Header() {
