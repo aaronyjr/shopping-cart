@@ -19,7 +19,7 @@ export function Homepage() {
             className={styles.showcaseImage}
           />
           <img
-            src="./img/homepage/women-suit.webp"
+            src="./img/homepage/homepage-gal.webp"
             alt="Customer 2"
             className={styles.showcaseImage}
           />
