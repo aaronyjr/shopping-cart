@@ -32,22 +32,32 @@ export function Homepage() {
       </section>
 
       <section className={styles.testimonials}>
-        <h2 className={styles.sectionTitle}>What Our Customers Say</h2>
-        <p className={styles.testimonial}>
-          &quot;I found the perfect suit for my wedding. Excellent quality and fit!"
-        </p>
-        <p className={styles.testimonial}>
-          &quot;Suit Savvy has the best selection of modern suits. Highly recommend!"
-        </p>
+        <div>
+          <h2 className={styles.sectionTitle}>What Our Customers Say</h2>
+          <p className={styles.testimonial}>
+            &quot;I found the perfect suit for my wedding. Excellent quality and
+            fit!"
+          </p>
+          <p className={styles.testimonial}>
+            &quot;Suit Savvy has the best selection of modern suits. Highly
+            recommend!"
+          </p>
+        </div>
+        <div>
+          <img src="./img/homepage/homepage-w.webp" alt="" />
+        </div>
       </section>
 
       <section className={styles.about}>
-        <h2 className={styles.sectionTitle}>About Us</h2>
-        <p className={styles.aboutDescription}>
-          At Suit Savvy, we believe in providing high-quality suits for every
-          occasion. Our collection is carefully curated to ensure style and
-          comfort.
-        </p>
+        <img src="./img/homepage/homepage-m.webp" alt="" />
+        <div>
+          <h2 className={styles.sectionTitle}>About Us</h2>
+          <p className={styles.aboutDescription}>
+            At Suit Savvy, we believe in providing high-quality suits for every
+            occasion. Our collection is carefully curated to ensure style and
+            comfort.
+          </p>
+        </div>
       </section>
     </div>
   );
